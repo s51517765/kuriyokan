@@ -5,8 +5,8 @@
   (paper "A4")
 
   (title_block
-    (title "Card size keyboard")
-    (rev "0")
+    (title "Kuriyokan (Card size keyboard)")
+    (rev "1")
     (company "toriten (s51517765)")
   )
 
