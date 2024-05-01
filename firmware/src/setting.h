@@ -8,14 +8,14 @@
  * SW6 SW5 SW4
  *   SW8 SW7
  */
-#define SW1 CTRL_C
-#define SW2 CTRL_A
-#define SW3 ALT_D
-#define SW4 CTRL_X
-#define SW5 CTRL_V
+#define SW1 CTRL_V
+#define SW2 CTRL_F
+#define SW3 CTRL_A
+#define SW4 CTRL_C
+#define SW5 CTRL_X
 #define SW6 CTRL_Z
-#define SW7 WIN_D
-#define SW8 CTRL_ALT_DELETE
+#define SW7 STR_0
+#define SW8 WIN_D
 #define SW0 // This Keyboard has 8 keys. Not assigned.
 
 // Setting

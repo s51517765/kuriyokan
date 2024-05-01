@@ -128,3 +128,10 @@ typedef enum
 #define KEY_CUT CTRL_X
 #define KEY_PASTE CTRL_V
 #define KEY_SELECT_ALL CTRL_A
+#define NONE 0
+
+typedef enum
+{
+  STR_0 = 0x1000,
+  STR_1,
+} STR_CODE;
