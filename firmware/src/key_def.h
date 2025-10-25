@@ -130,7 +130,7 @@ typedef enum
   STR_1,
 } STR_CODE;
 
-enum
+typedef enum
 {
   WHEEL_SCROLL_UP_CTRL = 0x2001,
   WHEEL_SCROLL_DOWN_CTRL,
@@ -142,5 +142,6 @@ enum
 #define KEY_CUT CTRL_X
 #define KEY_PASTE CTRL_V
 #define KEY_SELECT_ALL CTRL_A
+#define KEY_MAP_PAGE_TOGGLE 0xFF00
 #define NONE 0
 

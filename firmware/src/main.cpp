@@ -11,7 +11,11 @@ const uint8_t OUTPUT_PORT[] = {2, 3, 4}; // 2,3,4
 const uint8_t INPUT_PORT[] = {8, 7, 6};  // 5,6,7,8
 const uint8_t CN = pow(2, (sizeof(INPUT_PORT) / sizeof(uint8_t)) - 1);
 
-const uint16_t key_codes[] = {SW1, SW2, SW3, SW4, SW5, SW6, SW7, SW8, SW0};
+#define MAX_PAGE 2
+#define SW_COUNT 9
+const uint16_t key_codes[MAX_PAGE][SW_COUNT] = {{SW01, SW02, SW03, SW04, SW05, SW06, SW07, SW08, SW00}, {SW11, SW12, SW13, SW14, SW15, SW16, SW17, SW18, SW10}};
+uint8_t key_map_page = 0;
+
 // 文字列定義 必要に応じてサイズは拡大可能
 const uint8_t str_codes[2][8] = {{0x6b, 0x75, 0x72, 0x69, KEY_RETURN, NONE, NONE, NONE}, {NONE, NONE, NONE, NONE, NONE, NONE, NONE, NONE}};
 
@@ -75,15 +79,20 @@ void loop()
         uint16_t mask = 1;
         uint16_t code;
 
-        for (uint8_t i = 0; i < sizeof(key_codes); i++)
+        for (uint8_t i = 0; i < sizeof(key_codes[0]); i++)
         {
             if (change & mask)
             {
-                code = key_codes[i];
+                code = key_codes[key_map_page][i];
 
                 if (key_pressed & mask)
                 {
-                    if((code & 0x2000) !=0){
+                    if (code == KEY_MAP_PAGE_TOGGLE)
+                    {
+                        key_map_page = (key_map_page + 1) % MAX_PAGE;
+                        debug_print(0xFFFF);
+                    }
+                    else if((code & 0x2000) !=0){
                         // ホイールスクロール
                         switch(code)
                         {                           
