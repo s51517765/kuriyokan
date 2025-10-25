@@ -9,11 +9,11 @@
  *   SW8 SW7
  */
 #define SW1 CTRL_V
-#define SW2 CTRL_F
+#define SW2 WHEEL_SCROLL_DOWN_SHIFT //CTRL_F
 #define SW3 CTRL_A
-#define SW4 CTRL_C
-#define SW5 CTRL_X
-#define SW6 CTRL_Z
+#define SW4 WHEEL_SCROLL_UP_CTRL // CTRL_C
+#define SW5 WHEEL_SCROLL_UP_SHIFT // CTRL_X
+#define SW6 WHEEL_SCROLL_DOWN_CTRL //CTRL_Z
 #define SW7 STR_0
 #define SW8 WIN_D
 #define SW0 // This Keyboard has 8 keys. Not assigned.

@@ -124,14 +124,23 @@ typedef enum
   ALT_Z,
 } KEY_ALT;
 
+typedef enum
+{
+  STR_0 = 0x1000,
+  STR_1,
+} STR_CODE;
+
+enum
+{
+  WHEEL_SCROLL_UP_CTRL = 0x2001,
+  WHEEL_SCROLL_DOWN_CTRL,
+  WHEEL_SCROLL_UP_SHIFT,
+  WHEEL_SCROLL_DOWN_SHIFT,
+} WHEEL_SCROLL;
+
 #define KEY_COPY CTRL_C
 #define KEY_CUT CTRL_X
 #define KEY_PASTE CTRL_V
 #define KEY_SELECT_ALL CTRL_A
 #define NONE 0
 
-typedef enum
-{
-  STR_0 = 0x1000,
-  STR_1,
-} STR_CODE;

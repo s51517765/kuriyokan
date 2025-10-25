@@ -2,6 +2,7 @@
 // 書き込めないとき、書き込み始めたらRSTをGNDに1回
 
 #include <Keyboard.h>
+#include <Mouse.h>
 #include "setting.h"
 
 #define BUILTIN_LED 30
@@ -43,6 +44,8 @@ void setup()
     {
         pinMode(BUILTIN_LED, INPUT);
     }
+    //ホイールスクロール用
+    Mouse.begin();
 }
 
 uint16_t key_scan()
@@ -80,7 +83,31 @@ void loop()
 
                 if (key_pressed & mask)
                 {
-                    if ((code & STR_0) != 0)
+                    if((code & 0x2000) !=0){
+                        // ホイールスクロール
+                        switch(code)
+                        {                           
+                        case WHEEL_SCROLL_UP_CTRL: 
+                            Keyboard.press(KEY_LEFT_CTRL);    
+                            Mouse.move(0, 0, 1); // 上スクロール
+                            break;
+                        case WHEEL_SCROLL_UP_SHIFT:
+                            Keyboard.press(KEY_LEFT_SHIFT);   
+                            Mouse.move(0, 0, 1); // 上スクロール    
+                            break;
+                        case WHEEL_SCROLL_DOWN_CTRL:
+                            Keyboard.press(KEY_LEFT_CTRL);    
+                            Mouse.move(0, 0, -1); // 下スクロール
+                            break;
+                        case WHEEL_SCROLL_DOWN_SHIFT:
+                            Keyboard.press(KEY_LEFT_SHIFT);   
+                            Mouse.move(0, 0, -1); // 下スクロール
+                            break;
+                        default:
+                            break;
+                        }
+                    }
+                    else if ((code & STR_0) != 0)
                     {
                         // 文字列
                         for (uint8_t i = 0; i < sizeof(str_codes[0]) / sizeof(str_codes[0][0]); i++)
