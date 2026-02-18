@@ -95,7 +95,13 @@ void loop()
                     else if((code & 0x2000) !=0){
                         // ホイールスクロール
                         switch(code)
-                        {                           
+                        {
+                        case WHEEL_SCROLL_UP:
+                            Mouse.move(0, 0, 1); // 上スクロール
+                            break;
+                        case WHEEL_SCROLL_DOWN:
+                            Mouse.move(0, 0, -1); // 上スクロール
+                            break;
                         case WHEEL_SCROLL_UP_CTRL: 
                             Keyboard.press(KEY_LEFT_CTRL);    
                             Mouse.move(0, 0, 1); // 上スクロール

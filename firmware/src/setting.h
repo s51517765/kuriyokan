@@ -20,12 +20,12 @@
 #define SW08 WIN_D
 #define SW00 // This Keyboard has 8 keys. Not assigned.
 // KEY MAP 2nd PAGE
-#define SW11 NONE
-#define SW12 WHEEL_SCROLL_DOWN_SHIFT
-#define SW13 NONE
-#define SW14 WHEEL_SCROLL_UP_CTRL
-#define SW15 WHEEL_SCROLL_UP_SHIFT
-#define SW16 WHEEL_SCROLL_DOWN_CTRL
+#define SW11 WHEEL_SCROLL_UP
+#define SW12 WHEEL_SCROLL_UP_SHIFT
+#define SW13 WHEEL_SCROLL_DOWN
+#define SW14 WHEEL_SCROLL_DOWN_CTRL
+#define SW15 WHEEL_SCROLL_DOWN_SHIFT
+#define SW16 WHEEL_SCROLL_UP_CTRL
 #define SW17 KEY_MAP_PAGE_TOGGLE
 #define SW18 WIN_D
 #define SW10 // This Keyboard has 8 keys. Not assigned.
